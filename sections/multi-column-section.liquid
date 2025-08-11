@@ -1,66 +1,94 @@
 {% liquid
-assign default_images = "aging skin.png,Dry Skin.png,sensitive skin.png" | split: ","
-
+  assign default_images = "aging skin.png,Dry Skin.png,sensitive skin.png" | split: ","
 %}
 
 <style>
-
-/* .grid-container {
-display: flex;
-justify-content: center;
-
-} */
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* max 3 columns */
-  gap: 10px; /* space between each block */
-  justify-content: center;
-  max-width: 1200px; /* prevents over-stretching */
-  margin:  0px auto;
+/* Section container */
+.three-column-section {
+  padding-top: 50px;
 }
 
-.card {
-  background: white;
-  padding: 10px;
-  text-align: left;
 
+
+.three-column-section .p {
+  width: 80%;
+  margin: 0 auto 30px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 16px;
+  color: #555;
+  text-align: center;
+}
+
+/* Grid layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Max 3 columns */
+  gap: 10px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card styling */
+.card {
+  background: rgb(245,245,245);
+  text-align: left;
 }
 
 .card img {
-  width: 100%; 
+  width: 100%;
   height: auto;
-  object-fit: cover;
-  
 }
 
+/* Card title */
 .card h3 {
-  font-family: 'Poppins';
-  font-weight: ;
-  font-size: 18px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 250;
+  font-size: 26px;
   margin: 10px 0 5px;
 }
 
+.card h3 a {
+  color: black;
+  text-decoration: none;
+}
+
+.card h3 a:hover {
+  color: #1a5b80;
+}
+
+/* Card description */
 .card p {
-  font-family: 'Work Sans';
+  font-family: 'Work Sans', sans-serif;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   color: #555;
 }
 
-.card a {
-  display: inline-block;
-  margin-top: 10px;
-  color: #2a7db1;
-  font-weight: bold;
+/* Shop Now button/link */
+.card .shop-now {
+  margin-top: 5px;
+  color: #000;
   text-decoration: none;
-}
-.three-column-section{
-  padding-top: 50px;
-}
-.three-column-section .p{
-  width: 80%;
+  font-family: 'Work Sans';
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28.8px;
 }
 
+.card .shop-now:hover {
+  color: #1a5b80;
+}
+
+.card .shop-now::after {
+  content: "→";
+  margin-left: 5px;
+  color: #999;
+  font-size: 16px;
+  line-height: 3;
+}
+
+/* Responsive design */
 @media (max-width: 992px) {
   .grid-container {
     grid-template-columns: repeat(2, 1fr);
@@ -75,35 +103,26 @@ justify-content: center;
 </style>
 
 <div class="three-column-section">
-<div class="shorttitle">{{ section.settings.section_title }}</div>
-<div class="p">{{ section.settings.section_description }}</div>
+  <div class="shorttitle">{{ section.settings.section_title }}</div>
+  <div class="p">{{ section.settings.section_description }}</div>
 
   <div class="grid-container">
     {% for block in section.blocks %}
       {% assign default_image = default_images[forloop.index0] %}
       <div class="card">
         {% if block.settings.image != blank %}
-          <img 
-            src="{{ block.settings.image | image_url: width: 350 }}" 
-            alt="{{ block.settings.title }}" 
-            width="350" 
-            height="auto"
-          >
+          <img src="{{ block.settings.image | image_url: width: 350 }}" alt="{{ block.settings.title }}" width="350" height="auto">
         {% else %}
-          <img 
-            src="{{ default_image | asset_url }}" 
-            alt="{{ block.settings.title }}" 
-            width="350" 
-            height="auto"
-          >
+          <img src="{{ default_image | asset_url }}" alt="{{ block.settings.title }}" width="350" height="auto">
         {% endif %}
 
-        <h3>{{ block.settings.title }}</h3>
+        <h3>
+          <a href="{{ block.settings.link }}">
+            {{ block.settings.title }}
+          </a>
+        </h3>
         <p>{{ block.settings.description }}</p>
-
-        {% if block.settings.link != blank %}
-          <a href="{{ block.settings.link }}">Learn More</a>
-        {% endif %}
+        <a href="{{ block.settings.link }}" class="shop-now">Shop Now</a>
       </div>
     {% endfor %}
   </div>
@@ -113,7 +132,6 @@ justify-content: center;
 {
   "name": "3 Column Image Cards",
   "settings": [
-
     {
       "type": "text",
       "id": "section_title",
@@ -147,7 +165,7 @@ justify-content: center;
           "type": "textarea",
           "id": "description",
           "label": "Description",
-          "default": "Short description about this category."
+          "default": "Nourish and replenish your skin with ultra-hydrating natural skincare products that restore moisture and leave your complexion feeling soft and smooth."
         },
         {
           "type": "url",
