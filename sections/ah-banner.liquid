@@ -1,0 +1,44 @@
+{% liquid
+  assign banner1 = section.settings.banner1
+  assign banner2 = section.settings.banner2
+%}
+{% comment %}
+  Banner 1
+{% endcomment %}
+{% if banner1 %}
+  <img src="{{ banner1 | image_url: width: 1200 }}" width="100%" height="auto" alt="Banner 1">
+{% else %}
+  <img src="{{ 'banner-1.png' | asset_url }}" width="100%" height="auto" alt="Default Banner 1">
+{% endif %}
+{% comment %}
+  Banner 2
+{% endcomment %}
+{% if banner2 %}
+  <img src="{{ banner2 | image_url: width: 1200 }}" width="100%" height="auto" alt="Banner 2">
+{% else %}
+  <img src="{{ 'banner-2.png' | asset_url }}" width="100%" height="auto" alt="Default Banner 2">
+{% endif %}
+
+{% schema %}
+{
+  "name": "Custom Banner",
+  "class": "custom-banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "banner1",
+      "label": "Banner 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner2",
+      "label": "Banner 2"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Banner"
+    }
+  ]
+}
+{% endschema %}

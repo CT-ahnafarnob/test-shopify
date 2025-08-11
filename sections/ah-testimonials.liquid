@@ -1,0 +1,259 @@
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+            .{{section.id}} {
+              padding: 20px;
+              background-color: #fff;
+              display: flex;
+              justify-content: center;
+              flex-direction: column;
+              align-items: center;
+
+            }
+            .{{section.id}} .container { }
+
+            .{{section.id}} .container1 h2{
+                  font-family: "Poppins", sans-serif;
+                  font-weight: 200;
+                  font-style: normal;
+                  text-align: center;
+                  color: black;
+                  font-size: 42px;
+                  padding-top: 40px;
+            }
+
+            .{{section.id}}.h3 {}
+            .{{section.id}}.p {}
+            .{{section.id}} .container .topic svg {
+
+            }
+            .quote-icon{
+          display: flex;
+          justify-content: center;
+          margin: 20px 0px;
+
+            }
+            .{{section.id}} .container .topic h2 {
+                        font-family: "Poppins";
+                        font-weight: 400;
+                        font-size: 18px;
+                        text-align: center;
+                        color: black;
+                        padding-bottom: 20px;
+            }
+            .{{section.id}} .container .clientsays {}
+            .{{section.id}} .container .clientsays p {
+                font-family: "Work Sans";
+                        font-weight: 300;
+                        font-size: 16px;
+                        line-height: 28.8px;
+                        text-align: center;
+                        color: black;
+                        padding: 12px 150px;
+                        margin:auto;
+            }
+            .{{section.id}} .container .clientname h3{
+              font-weight: 600;
+                        font-size: 16px;
+                        line-height: 28.8px;
+                        text-align: center;
+                        color: black
+            }
+  /* Global button assigned */
+
+
+
+      .btn-postion{
+        display: flex;
+        justify-content: center;
+        padding-top: 25px;
+      }
+
+      /* 📱 Mobile responsiveness */
+    @media (max-width: 768px) {
+      .{{section.id}} .container1 h2 {
+        font-size: 28px;
+      }
+
+      .{{section.id}} .container .clientsays p {
+        font-size: 15px;
+        padding: 12px 40px; /* reduce side padding */
+        line-height: 24px;
+      }
+
+      .{{section.id}} .container .clientname h3 {
+        font-size: 15px;
+      }
+
+      .{{section.id}} .container .button {
+        font-size: 13px;
+        padding: 14px 22px;
+      }
+    }
+    /* Smaller devices */
+    @media (max-width: 480px) {
+      .{{section.id}} .container1 h2 {
+        font-size: 24px;
+      }
+
+      .{{section.id}} .container .clientsays p {
+        font-size: 14px;
+        padding: 10px 20px;
+      }
+
+      .{{section.id}} .container .button {
+        width: 100%;
+        font-size: 13px;
+        padding: 12px;
+      }
+    }
+</style>
+
+<section class="{{section.id}}">
+  <div class="container1">
+    <h2>{{ section.settings.title }}</h2>
+  </div>
+  <div class="container">
+    <!-- Slider main container -->
+    <div class="swiper Topic">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        {% for block in section.blocks %}
+          {% liquid
+            assign topic = block.settings.topic
+            assign client_says = block.settings.client_says
+            assign client_name = block.settings.client_name
+            assign button_text = block.settings.button_text
+            assign button_link = block.settings.button_link
+          %}
+          <div class="swiper-slide">
+            <div class="topic">
+              <div class="quote-icon">
+                <svg
+                  class="quote-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="50.996"
+                  height="28.871"
+                  viewBox="0 0 50.996 28.871"
+                >
+                  <g id="Quote" transform="translate(-215 -4284.129)">
+                      <path id="Path_134" data-name="Path 134" d="M13.262,9.4A9.719,9.719,0,0,0,3.709,20.99,13.3,13.3,0,0,1,2,14.435C2,7.578,7.052,2,13.262,2V0C5.949,0,0,6.476,0,14.435,0,22,5.384,28.22,12.2,28.811A9.733,9.733,0,1,0,13.262,9.4" transform="translate(215 4284.129)" fill="#dbdbdb"></path>
+                      <path id="Path_134-2" data-name="Path 134" d="M13.262,9.4A9.719,9.719,0,0,0,3.709,20.99,13.3,13.3,0,0,1,2,14.435C2,7.578,7.052,2,13.262,2V0C5.949,0,0,6.476,0,14.435,0,22,5.384,28.22,12.2,28.811A9.733,9.733,0,1,0,13.262,9.4" transform="translate(243 4284.129)" fill="#dbdbdb"></path>
+                  </g>
+                </svg>
+              </div>
+              <h2>{{ topic }}</h2>
+            </div>
+            <div class="clientsays">
+              <p>{{ client_says }}</p>
+            </div>
+
+            <div class="clientname">
+              <h3>{{ client_name }}</h3>
+            </div>
+            <div class="btn-postion">
+              <button class="button">
+                <a href="{{button_link}}">{{ button_text }}</a>
+              </button>
+            </div>
+
+            {% comment %}
+              <div class="btn-postion">
+                <button class="button">{{ button_text }}</button>
+              </div>
+            {% endcomment %}
+
+            {% comment %}
+              <div class="button">
+                <a href="{{ button_link }}" class="btn">{{ button_text }}</a>
+              </div>
+            {% endcomment %}
+          </div>
+        {% endfor %}
+      </div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const swiper = new Swiper('.Topic', {
+    // Optional parameters
+
+    loop: true,
+
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Testimonials Section",
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "slide",
+      "settings": [
+        {
+          "type": "text",
+          "id": "topic",
+          "label": "Testimonials Topic",
+          "default": "Lea Black Beauty® Soothing After Sun & Shave Gel with 100mg CBD"
+        },
+        {
+          "type": "textarea",
+          "id": "client_says",
+          "label": "Client Says",
+          "default": "Lea Black Beauty is on 🔥 I tried this (Lea Black Beauty® Soothing After Sun & Shave Gel with 100mg CBD) on a whim, and what a pleasant surprise. It soothes aftershave burns. Then my nose got hit hard with a sunburn, so I tried it…totally awesome! Soothing and healing. Great ingredients I think the… Read more."
+        },
+        {
+          "type": "text",
+          "id": "client_name",
+          "label": "Client Name",
+          "default": "C J"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "WRITE YOUR STORY"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Testimonials"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials Section"
+    }
+  ]
+}
+{% endschema %}

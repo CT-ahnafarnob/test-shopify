@@ -1,0 +1,225 @@
+{% liquid
+  assign lbanner = section.settings.lbanner
+  assign ltext = section.settings.ltext
+  assign lp1 = section.settings.p1
+  assign lbutton1_text = section.settings.button1_text
+  assign lbutton1_link = section.settings.button1_link
+  assign rbanner = section.settings.rbanner
+  assign rtext = section.settings.rtext
+  assign rp2 = section.settings.p2
+  assign rbutton2_text = section.settings.button2_text
+  assign rbutton2_link = section.settings.button2_link
+%}
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+  .rewards-section {
+    display: flex;
+    height: 400px;
+    padding-bottom: 20px;
+    color: #004d40;
+  }
+
+  .left-column,
+  .right-column {
+    padding: 20px 20px 20px 40px;
+    align-content: center;
+    font-family: 'Work Sans';
+    width: 50%;
+    height: 400px;
+  }
+
+  .left-column {
+    background-image: linear-gradient(271deg, #98b7c28f, #5ca9c140 54%, #56aec8), url('{{ 'lbanner.png' | asset_url }}');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .right-column {
+    background-image: linear-gradient(271deg, #98b7c28f, #5ca9c140 54%, #56aec8), url('{{ 'rbanner.png' | asset_url }}');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .rewards-section h2 {
+    /* No need to redeclare font-family if it's set on the body */
+    font-weight: 500; /* Bold is a weight, not a property */
+    font-size: 24px;
+    color: white;
+
+    padding-bottom: 15px;
+  }
+
+  .rewards-section p {
+    font-size: 16px;
+    color: white;
+    font-family: 'Work Sans';
+    font-weight: 300;
+    line-height: 24px;
+    padding-bottom: 15px;
+  }
+
+  .shop-now-btn {
+    background-color: #ffffff;
+    color: #42a7c6;
+    border: none;
+    padding: 12px 25px;
+
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .shop-now-btn:hover {
+    background-color: #000000;
+    color: #ffffff;
+    transition: background-color 0.7s ease, color 0.7s ease;
+  }
+
+  @media (max-width: 768px) {
+    .rewards-section {
+      flex-direction: column; /* stack vertically */
+      min-height: auto;
+    }
+
+    .left-column,
+    .right-column {
+      width: 100%;
+      height: auto;
+      padding: 30px 20px; /* space for text */
+      text-align: left; /* center content */
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* vertical center */
+      align-items: left;
+    }
+
+    .rewards-section h2 {
+      font-size: 22px;
+      width: 100%; /* remove fixed width */
+      padding-bottom: 10px;
+    }
+
+    .rewards-section p {
+      font-size: 15px;
+      width: 100%;
+      padding-bottom: 15px;
+    }
+
+    .shop-now-btn {
+      padding: 10px 25px;
+      font-size: 14px;
+      width: auto;
+
+    }
+  }
+
+  @media (max-width: 480px) {
+    .rewards-section h2 {
+      font-size: 18px;
+    }
+
+    .rewards-section p {
+      font-size: 14px;
+    }
+
+    .shop-now-btn {
+      width: auto;
+      font-size: 13px;
+      padding: 10px 20px;
+    }
+  }
+</style>
+
+<section class="rewards-section">
+  <div class="left-column">
+    <div class="content">
+      <h2>{{ ltext }}</h2>
+      <p>{{ lp1 }}</p>
+
+      <button class="shop-now-btn">{{ lbutton1_text }}</button>
+    </div>
+  </div>
+
+  <div class="right-column">
+    <div class="content">
+      <h2>{{ rtext }}</h2>
+      <p>{{ rp2 }}</p>
+      <button class="shop-now-btn">{{ rbutton2_text }}</button>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Dual Banner",
+  "class": "dual-banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "lbanner",
+      "label": "Left Banner Image"
+    },
+    {
+      "type": "text",
+      "id": "ltext",
+      "label": "Left Heading",
+      "default": "Join Our Rewards Program"
+    },
+    {
+      "type": "text",
+      "id": "p1",
+      "label": "Text for Left Side",
+      "default": "Instant 50 points when creating an account. Earn points for every $1 spent on natural skincare products. Birthday gifts and more."
+    },
+    {
+      "type": "text",
+      "id": "button1_text",
+      "label": "Button Text for Left Side",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button1_link",
+      "label": "Button Link for Left Side"
+    },
+    {
+      "type": "image_picker",
+      "id": "rbanner",
+      "label": "Right Banner Image"
+    },
+    {
+      "type": "text",
+      "id": "rtext",
+      "label": "Right Heading",
+      "default": "Save up to 40% on Bundles"
+    },
+    {
+      "type": "text",
+      "id": "p2",
+      "label": "Text for Right Side",
+      "default": "Shop our value-priced beauty bundles to start your Lea Black Beauty® skincare journey."
+    },
+    {
+      "type": "text",
+      "id": "button2_text",
+      "label": "Button Text for Right Side",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button2_link",
+      "label": "Button Link for Right Side"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Banner"
+    }
+  ]
+}
+{% endschema %}

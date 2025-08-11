@@ -1,0 +1,151 @@
+{% liquid
+  assign heading_text = section.settings.heading_text
+  assign short_description = section.settings.short_description
+  assign image = section.settings.image
+  assign button_text = section.settings.button_text
+  assign button_link = section.settings.button_link
+%}
+
+<style>
+           @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+      .{{section.id}} {
+
+              display: flex;
+              align-items: center; /* vertical alignment */
+              justify-content: space-between; /* space between text and image */
+              max-width: 1200px;
+              margin: 0 auto;
+              padding: 20px 5px;
+    }
+
+        .{{section.id}} .textnimage h1{
+          font-family: 'Poppins';
+          font-weight: 200;
+          font-size: 40px;
+          color: black;
+          line-height: 50px;;
+          max-width: 500px;
+          padding-left: 70px;
+        }
+        .{{section.id}} .textnimage p{
+          font-family: 'Work Sans';
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 28.8px;
+          color: black;
+          width: 60%;
+          padding-left: 70px;
+          padding-bottom: 10px;
+
+
+        }
+
+        .{{section.id}} .rimage-container img {
+          width: 100%;
+          height: auto;
+
+        }
+          .{{section.id}} .textnimage .button {
+
+          margin-left: 70px;
+
+        }
+        /* ===== Responsive for Mobile ===== */
+  @media (max-width: 768px) {
+    .{{section.id}} {
+      flex-direction: column-reverse;
+      text-align: left;
+      padding: 40px 20px;
+    }
+
+    .{{section.id}} .textnimage h1 {
+      font-size: 28px;
+      line-height: 36px;
+      padding-left: 0;
+      max-width: 100%;
+    }
+
+    .{{section.id}} .textnimage p {
+      font-size: 14px;
+      line-height: 24px;
+      padding-left: 0;
+      width: 100%;
+    }
+
+    .{{section.id}} .rimage-container img {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    }
+</style>
+<section class="{{section.id}}">
+  <div class="textnimage">
+    {% comment %}
+      Left Side Text
+    {% endcomment %}
+    <h1>{{ heading_text }}</h1>
+    <p>{{ short_description }}</p>
+    <button class="button">
+      {% comment %}
+        Button Text and Link
+      {% endcomment %}
+      <a href="{{button_link}}">{{ button_text }}</a>
+    </button>
+  </div>
+
+  <div class="rimage-container">
+    {% comment %}
+      Right Side Image
+    {% endcomment %}
+    {% if image %}
+      <img src="{{ image | image_url: width: 1200 }}" width="100%" height="100%" alt="rightImage">
+    {% else %}
+      <img src="{{ 'pimage.png' | asset_url }}" width="50%" height="auto" alt="rightImage">
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Text With Image",
+  "class": "text-with-image",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading_text",
+      "label": "Heading Text",
+      "default": "Lea Black Beauty®’s Natural Skincare Products"
+    },
+    {
+      "type": "text",
+      "id": "short_description",
+      "label": "Short Description",
+      "default": "Elevate your skincare routine with results-driven formulas you can trust."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Right Side Image"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text Left, Image Right"
+    }
+  ]
+}
+{% endschema %}
