@@ -10,14 +10,7 @@
 
 
 
-.three-column-section .p {
-  width: 80%;
-  margin: 0 auto 30px;
-  font-family: 'Work Sans', sans-serif;
-  font-size: 16px;
-  color: #555;
-  text-align: center;
-}
+
 
 /* Grid layout */
 .grid-container {
@@ -42,19 +35,21 @@
 
 /* Card title */
 .card h3 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   font-weight: 250;
   font-size: 26px;
   margin: 10px 0 5px;
+  
 }
 
 .card h3 a {
-  color: black;
+  color: #1a5b80;
   text-decoration: none;
 }
 
 .card h3 a:hover {
-  color: #1a5b80;
+  color: #000000;
+
 }
 
 /* Card description */
@@ -87,6 +82,9 @@
   font-size: 16px;
   line-height: 3;
 }
+.card-content {
+  padding: 25px;
+}
 
 /* Responsive design */
 @media (max-width: 992px) {
@@ -115,14 +113,14 @@
         {% else %}
           <img src="{{ default_image | asset_url }}" alt="{{ block.settings.title }}" width="350" height="auto">
         {% endif %}
-
-        <h3>
+<div class="card-content"><h3>
           <a href="{{ block.settings.link }}">
             {{ block.settings.title }}
           </a>
         </h3>
         <p>{{ block.settings.description }}</p>
-        <a href="{{ block.settings.link }}" class="shop-now">Shop Now</a>
+        <a href="{{ block.settings.link }}" class="shop-now">Shop Now</a></div>
+        
       </div>
     {% endfor %}
   </div>
