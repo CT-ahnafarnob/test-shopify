@@ -1,9 +1,10 @@
-<link
+{% comment %} <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
->
+/> {% endcomment %}
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+{% comment %} <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> {% endcomment %}
+
 
 <style>
             @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -110,7 +111,7 @@
       }
 
       .{{section.id}} .container .button {
-        width: 100%;
+        width: 50%;
         font-size: 13px;
         padding: 12px;
       }
@@ -123,7 +124,7 @@
   </div>
   <div class="container">
     <!-- Slider main container -->
-    <div class="swiper Topic">
+    <div class="swiper slider-topic">
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
         <!-- Slides -->

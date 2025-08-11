@@ -1,3 +1,34 @@
+{
+  "sections": {
+    "hero": {
+      "type": "ah-banner"
+    },
+    "dual": {
+      "type": "dual-banner"
+    },
+    "ah-testimonials": {
+      "type": "ah-testimonials"
+    },
+    "textWithImage": {
+      "type": "text-with-image"
+    },
+    "leftImageRightText": {
+      "type": "left-image-right-text"
+    },
+    "multiColumnSection": {
+      "type": "multi-column-section"
+    }
+  },
+  "order": [
+    "hero",
+    "dual",
+    "ah-testimonials",
+    "textWithImage",
+    "leftImageRightText",
+    "multiColumnSection"
+  ]
+}
+
 // {
 //   "sections": {
 //     "image_banner": {
@@ -67,33 +98,3 @@
 //   },
 //   "order": ["image_banner", "featured_collection"]
 // }
-{
-  "sections": {
-    "hero": {
-      "type": "ah-banner"
-    },
-    "dual": {
-      "type": "dual-banner"
-    },
-    "ah-testimonials": {
-      "type": "ah-testimonials"
-    },
-    "textWithImage": {
-      "type": "text-with-image"
-    },
-    "leftImageRightText": {
-      "type": "left-image-right-text"
-    },
-    "multiColumnSection": {
-      "type": "multi-column-section"
-    }
-  },
-  "order": [
-    "hero",
-    "dual",
-    "ah-testimonials",
-    "textWithImage",
-    "leftImageRightText",
-    "multiColumnSection"
-  ]
-}

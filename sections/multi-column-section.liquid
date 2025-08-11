@@ -1,25 +1,167 @@
+{% liquid
+assign default_images = "aging skin.png,Dry Skin.png,sensitive skin.png" | split: ","
+
+%}
+
+<style>
+
+/* .grid-container {
+display: flex;
+justify-content: center;
+
+} */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* max 3 columns */
+  gap: 10px; /* space between each block */
+  justify-content: center;
+  max-width: 1200px; /* prevents over-stretching */
+  margin:  0px auto;
+}
+
+.card {
+  background: white;
+  padding: 10px;
+  text-align: left;
+
+}
+
+.card img {
+  width: 100%; 
+  height: auto;
+  object-fit: cover;
+  
+}
+
+.card h3 {
+  font-family: 'Poppins';
+  font-weight: ;
+  font-size: 18px;
+  margin: 10px 0 5px;
+}
+
+.card p {
+  font-family: 'Work Sans';
+  font-weight: 400;
+  font-size: 14px;
+  color: #555;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #2a7db1;
+  font-weight: bold;
+  text-decoration: none;
+}
+.three-column-section{
+  padding-top: 50px;
+}
+.three-column-section .p{
+  width: 80%;
+}
+
+@media (max-width: 992px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<div class="three-column-section">
+<div class="shorttitle">{{ section.settings.section_title }}</div>
+<div class="p">{{ section.settings.section_description }}</div>
+
+  <div class="grid-container">
+    {% for block in section.blocks %}
+      {% assign default_image = default_images[forloop.index0] %}
+      <div class="card">
+        {% if block.settings.image != blank %}
+          <img 
+            src="{{ block.settings.image | image_url: width: 350 }}" 
+            alt="{{ block.settings.title }}" 
+            width="350" 
+            height="auto"
+          >
+        {% else %}
+          <img 
+            src="{{ default_image | asset_url }}" 
+            alt="{{ block.settings.title }}" 
+            width="350" 
+            height="auto"
+          >
+        {% endif %}
+
+        <h3>{{ block.settings.title }}</h3>
+        <p>{{ block.settings.description }}</p>
+
+        {% if block.settings.link != blank %}
+          <a href="{{ block.settings.link }}">Learn More</a>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
 {% schema %}
 {
-  "name": "Multi Column Section",
-  "class": "Multi-Column-Section",
+  "name": "3 Column Image Cards",
   "settings": [
+
     {
       "type": "text",
-      "id": "title",
+      "id": "section_title",
       "label": "Section Title",
       "default": "Shop By Skin Concern"
     },
     {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "Section Color Scheme",
-      "default": "secheme-6"
+      "type": "textarea",
+      "id": "section_description",
+      "label": "Section Description",
+      "default": "Your skin deserves a routine tailored to its unique needs. Explore our curated collections at Lea Black Beauty® to find solutions designed to target your specific concerns."
     }
-
   ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Card Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Dry Skin"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Short description about this category."
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12,
   "presets": [
     {
-      "name": "Multi Column Section"
+      "name": "3 Column Image Cards",
+      "category": "Custom"
     }
   ]
 }
