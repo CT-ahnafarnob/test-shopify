@@ -1,0 +1,225 @@
+{% liquid
+    assign section_title = section.settings.section_title
+    assign section_content = section.settings.section_content
+    assign section_image = section.settings.section_image
+    assign fcontent = section.settings.fcontent
+    assign tcontent = section.settings.tcontent
+    assign scontent = section.settings.scontent
+%}
+<style>
+      .why-us {
+        background: linear-gradient(
+          90deg,
+          rgba(192.38165283203125, 235.38461303710938, 233.23448181152344, 1),
+          rgba(255, 255, 255, 1) 100%
+        );
+      }
+      .section-title {
+        color: rgba(0, 0, 0, 1);
+        font-family: Poppins;
+        font-size: 42px;
+        font-weight: 400;
+        line-height: 100%;
+        letter-spacing: 0%;
+        text-align: center;
+      }
+
+      .section-paragraph {
+        color: rgba(0, 0, 0, 1);
+        font-family: Work Sans;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 150%;
+        letter-spacing: 0%;
+        text-align: center;
+        max-width: 722px;
+        margin: auto;
+        padding: 0 15px;
+      }
+
+      .section-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px 0;
+      }
+
+      .image-content {
+        text-align: center;
+      }
+
+      .image-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+        padding: 50px 15px 0;
+        color: rgba(0, 0, 0, 1);
+        font-family: Poppins;
+        font-size: 15px;
+        font-weight: 500;
+        text-align: center;
+      }
+
+      .Trust-Section {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        justify-content: center;
+        padding: 50px 15px;
+        margin: 0px 200px;
+      }
+
+      .trust-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        text-align: left;
+        min-height: 300px;
+        padding: 96px 32px;
+        box-sizing: border-box;
+      }
+
+      .trust-container h3 {
+        margin-bottom: 15px;
+      }
+
+      .background-image-1 {
+  background-image: url('{{ "image 14.png" | asset_url }}');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.background-image-2 {
+  background-image: url('{{ "image 15.png" | asset_url }}');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.background-image-3 {
+  background-image: url('{{ "image 16.png" | asset_url }}');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+      .trust-paragraph {
+        max-width: 300px;
+        line-height: 150%;
+      }
+
+      /* responsive */
+      @media (max-width: 768px) {
+        .section-title {
+          font-size: 32px;
+        }
+        .section-paragraph {
+          font-size: 14px;
+        }
+        .Trust-Section {
+          margin: 0px;
+        }
+        .trust-container {
+          align-items: center;
+          text-align: center;
+        }
+        .trust-paragraph {
+          max-width: 100%;
+        }
+      }
+    </style>
+  
+      <section class="why-us">
+        <div class="section-content">
+          <h1 class="section-title">{{ section_title }}</h1>
+          <p class="section-paragraph">
+            {{ section_content }}
+          </p>
+        </div>
+       <div class="image-container">
+  <div class="image-content">
+    <img src="{{ 'image 9.png' | asset_url }}" alt="Ethically Sourced" width="auto" height="auto">
+    <p>Ethically Sourced</p>
+  </div>
+  <div class="image-content">
+    <img src="{{ 'image 10.png' | asset_url }}" alt="Natural Ingredients" width="auto" height="auto">
+    <p>Natural Ingredients</p>
+  </div>
+  <div class="image-content">
+    <img src="{{ 'image 11.png' | asset_url }}" alt="No Synthetic Fragrance" width="auto" height="auto">
+    <p>No Synthetic Fragrance</p>
+  </div>
+  <div class="image-content">
+    <img src="{{ 'image 12.png' | asset_url }}" alt="Cruelty Free" width="auto" height="auto">
+    <p>Cruelty Free</p>
+  </div>
+  <div class="image-content">
+    <img src="{{ 'image 13.png' | asset_url }}" alt="Paraben Free" width="auto" height="auto">
+    <p>Paraben Free</p>
+  </div>
+</div>
+        <div class="Trust-Section">
+          <div class="trust-container background-image-1">
+            <h3>Proven Results</h3>
+            <p class="trust-paragraph">
+              {{ fcontent }}
+            </p>
+          </div>
+          <div class="trust-container background-image-2">
+            <h3>Outstanding Support</h3>
+            <p class="trust-paragraph">
+              {{ scontent }}
+            </p>
+          </div>
+          <div class="trust-container background-image-3">
+            <h3>Secure Checkout</h3>
+            <p class="trust-paragraph">
+              {{ tcontent }}
+            </p>
+          </div>
+        </div>
+      </section>
+
+{% schema %}
+    {
+        "name": "Why Us",
+        "settings": [
+            {
+                "type": "text",
+                "id": "section_title",
+                "label": "Section Title",
+                "default": "Why Us?"
+            },
+            {
+                "type": "textarea",
+                "id": "section_content",
+                "label": "Section Content",
+                "default": "To create our natural skincare products, we ethically source the finest raw ingredients from around the world so you can be assured of the quality. Our proprietary formulas are easy to use and clinically proven to produce amazing results. Satisfaction guaranteed!"
+            },
+            {
+                "type": "textarea",
+                "id": "fcontent",
+                "label": "First Description",
+                "default": "You'll find exactly what you're looking for in Lea Black Beauty®'s natural skincare products. Premium skincare made from the finest ingredients with proven results. Thousands of customer orders and testimonials prove that Lea Black Beauty® luxury skincare products are the choice of distinguished clients worldwide."
+            },
+            {
+                "type": "textarea",
+                "id": "scontent",
+                "label": "Second Description",
+                "default": "Our customer support is second to none. We have three real people here to provide you with five-star customer service during business hours. Contact for any questions you may have. Please allow 24 business hours for us to reply."
+            },
+            {
+                "type": "textarea",
+                "id": "tcontent",
+                "label": "Third Description",
+                "default": "With 128-bit SSL security with advanced encryption you are guaranteed that your purchases are safe. We never store your banking information on our servers. We never sell your information."
+            },
+            {
+                "type": "textarea",
+                "id": "j",
+                "label": "Fourth Description",
+                "default": "To create our natural skincare products, we ethically source the finest raw ingredients from around the world so you can be assured of the quality. Our proprietary formulas are easy to use and clinically proven to produce amazing results. Satisfaction guaranteed!"
+            }
+
+        ]
+    }
+{% endschema %}

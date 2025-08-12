@@ -23,6 +23,12 @@
     },
     "grid-section": {
       "type": "grid-section"
+    },
+    // "featuredProductCollection": {
+    //   "type": "featured-product-collection"
+    // }
+    "whyUs": {
+      "type": "why-us"
     }
   },
   "order": [
@@ -33,7 +39,9 @@
     "leftImageRightText",
     "multiColumnSection",
     "about-lea-black",
-    "grid-section"
+    "grid-section",
+    // "featuredProductCollection"
+    "whyUs"
   ]
 }
 
