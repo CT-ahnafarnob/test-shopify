@@ -1,0 +1,63 @@
+{% style %}
+    
+
+{% endstyle %}
+
+<div class="image-container">
+  <div class="image-content">
+  {% render 'icon-truck' %}
+  <p>{{ section.settings.text_1 }}</p>
+</div>
+
+  <div class="image-content">
+    {% render 'icon-thumb' %}
+    <p>{{ section.settings.text_2 }}</p>
+  </div>
+  <div class="image-content">
+    {% render 'icon-star' %}
+    <p>{{ section.settings.text_3 }}</p>
+  </div>
+  <div class="image-content">
+    {% render 'icon-secure' %}
+    <p>{{ section.settings.text_4 }}</p>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Our Promises",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Text 1",
+      "default": "Complimentary Shipping"
+    },
+    {
+      "type": "text",
+      "id": "text_2",
+      "label": "Text 2",
+      "default": "Satisfaction Guarantee"
+    },
+    {
+      "type": "text",
+      "id": "text_3",
+      "label": "Text 3",
+      "default": "Best Products"
+    },
+    {
+      "type": "text",
+      "id": "text_4",
+      "label": "Text 4",
+      "default": "100% Secure Checkout"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Our Promises",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+

@@ -29,6 +29,9 @@
     // }
     "whyUs": {
       "type": "why-us"
+    },
+    "ourPromises": {
+      "type": "our-promises"
     }
   },
   "order": [
@@ -41,7 +44,8 @@
     "about-lea-black",
     "grid-section",
     // "featuredProductCollection"
-    "whyUs"
+    "whyUs",
+    "ourPromises"
   ]
 }
 
