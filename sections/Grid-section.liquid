@@ -1,0 +1,193 @@
+
+<style>
+.grid-section {
+  text-align: center;
+   margin: 20px auto;
+}
+
+.section-title {
+    font-family: 'Poppins';
+    font-weight: 250;
+    font-size: 42px;
+    line-height: 62px;
+    color:black;
+}
+
+.section-description {
+font-family: 'Work Sans';
+font-weight: 300;
+ font-size: 16px;
+ line-height: 28.8px;
+ color: black;
+width: 65%;
+margin: 0 auto 30px auto;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  
+
+}
+
+.grid-card {
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #eee;
+  text-align: left;
+  border: none;
+}
+
+.grid-card img {
+  max-width: 100%;
+  height: auto;
+  
+  
+}
+
+.grid-card h3 {
+    font-family: 'Poppins';
+    font-weight:500;   
+    font-size: 16px;
+    color:black
+
+}
+.grid-card h3:hover {
+    color:#1a5b80;
+    cursor: pointer;
+}
+
+.grid-card p {
+    font-family: 'Work Sans';
+    font-weight: 300;
+  font-size: 16px;
+  color: #666;
+}
+
+.grid-card .read-more {
+  margin-top: 5px;
+  color:  #358aa6;
+  text-decoration: none;
+  font-family: 'Work Sans';
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28.8px;
+}
+
+.grid-card .read-more:hover {
+  color: #6397b5;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<div class="grid-section page-width">
+  {% if section.settings.section_title != blank %}
+    <h2 class="section-title">{{ section.settings.section_title }}</h2>
+  {% endif %}
+
+  {% if section.settings.richtext != blank %}
+    <div class="section-description">
+      {{ section.settings.richtext }}
+    </div>
+  {% endif %}
+
+  <div class="grid-container">
+    {% for block in section.blocks %}
+      <div class="grid-card" {{ block.shopify_attributes }}>
+       
+       {% if block.settings.image != blank %}
+  <img 
+    src="{{ block.settings.image | img_url: '600x' }}" alt="{{ block.settings.title | escape }}" width="700" height="auto"
+  >
+{% else %}
+  <img 
+    src="{{ 'grid1.png' | asset_url }}" alt="{{ block.settings.title | escape }}" width="700" height="auto"
+  >
+{% endif %}
+
+        {% if block.settings.title != blank %}
+          <h3>{{ block.settings.title }}</h3>
+        {% endif %}
+
+        {% if block.settings.description != blank %}
+          <p>{{ block.settings.description }}</p>
+        {% endif %}
+
+        
+        <a href="{{ block.settings.link }}" class="read-more">Read More</a>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Grid Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "LBB CBD 101"
+    },
+    {
+      "type": "richtext",
+      "id": "richtext",
+      "label": "Section Description",
+      "default": "<p>We use groundbreaking CBD technology with the latest clinical data to produce some of the most sought-after hemp, clean skincare products available without a prescription. Discover the incredible power of using topical CBD as part of your overall health and wellness plan.</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Card Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "7 Myths About CBD Oil"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Over the last few years, CBD has become insanely popular and finds its way into all kinds of industries."
+        },
+       
+        {
+            "type": "url",
+            "id": "link",
+            "label": "Button Link"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "Grid Section",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

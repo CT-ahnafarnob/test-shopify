@@ -17,6 +17,12 @@
     },
     "multiColumnSection": {
       "type": "multi-column-section"
+    },
+    "about-lea-black": {
+      "type": "hero-about-lea-black"
+    },
+    "grid-section": {
+      "type": "grid-section"
     }
   },
   "order": [
@@ -25,7 +31,9 @@
     "ah-testimonials",
     "textWithImage",
     "leftImageRightText",
-    "multiColumnSection"
+    "multiColumnSection",
+    "about-lea-black",
+    "grid-section"
   ]
 }
 
