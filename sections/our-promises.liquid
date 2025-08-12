@@ -1,32 +1,105 @@
 {% style %}
-    
+
+.icon-container {
+  display: flex;
+  align-items: left;
+  gap:30px;
+  justify-content: space-between;
+  padding: 40px 120px;
+  
+}
+  .our-promises h3{
+     color: rgba(0, 0, 0, 1);
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0%;
+  }
+
+  .our-promises p{
+    color: gray;
+      font-family: Work Sans;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+
+  }
+  .promise-content {
+      text-align: left;
+      width:100%
+  }
+
+@media (max-width: 768px) {
+  .our-promises .icon-container {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+    padding: 10px !important;
+  }
+
+  .our-promises .icon-container > .promise-content {
+    width: auto !important;
+    box-sizing: border-box !important;
+  }
+}
 
 {% endstyle %}
-
-<div class="image-container">
-  <div class="image-content">
+<section class="our-promises">
+  <div class="icon-container">
+  <div class="promise-content">
   {% render 'icon-truck' %}
-  <p>{{ section.settings.text_1 }}</p>
+  <h3>{{ section.settings.text_1 }}</h3>
+  <p>{{ section.settings.description_1 }}</p>
 </div>
 
-  <div class="image-content">
+  <div class="promise-content">
     {% render 'icon-thumb' %}
-    <p>{{ section.settings.text_2 }}</p>
+    <h3>{{ section.settings.text_2 }}</h3>
+    <p>{{ section.settings.description_2 }}</p>
   </div>
-  <div class="image-content">
+  <div class="promise-content">
     {% render 'icon-star' %}
-    <p>{{ section.settings.text_3 }}</p>
+    <h3>{{ section.settings.text_3 }}</h3>
+    <p>{{ section.settings.description_3 }}</p>
   </div>
-  <div class="image-content">
+  <div class="promise-content">
     {% render 'icon-secure' %}
-    <p>{{ section.settings.text_4 }}</p>
+    <h3>{{ section.settings.text_4 }}</h3>
+    <p>{{ section.settings.description_4 }}</p>
   </div>
 </div>
+</section>
+
 
 {% schema %}
 {
   "name": "Our Promises",
   "settings": [
+  {
+      "type": "richtext",
+      "id": "description_1",
+      "label": "Description for Promise 1",
+      "default": "<p>Take advantage of free shipping on all orders over $65 (USA shipping only).</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "description_2",
+      "label": "Description for Promise 2",
+      "default": "<p>Our customer happiness team is here to help at hello@leablack.com.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "description_3",
+      "label": "Description for Promise 3",
+      "default": "<p>We source the highest quality ingredients and CBD for our natural skincare solutions.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "description_4",
+      "label": "Description for Promise 4",
+      "default": "<p>We accept AMEX, MasterCard, and Visa</p>"
+    },
     {
       "type": "text",
       "id": "text_1",
