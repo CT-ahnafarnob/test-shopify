@@ -10,46 +10,238 @@
 {
   "sections": {
     "hero": {
-      "type": "ah-banner"
+      "type": "ah-banner",
+      "settings": {}
     },
     "dual": {
-      "type": "dual-banner"
-    },
-    "ah-testimonials": {
-      "type": "ah-testimonials"
+      "type": "dual-banner",
+      "settings": {
+        "ltext": "Join Our Rewards Program",
+        "p1": "Instant 50 points when creating an account. Earn points for every $1 spent on natural skincare products. Birthday gifts and more.",
+        "button1_text": "Shop Now",
+        "button1_link": "",
+        "rtext": "Save up to 40% on Bundles",
+        "p2": "Shop our value-priced beauty bundles to start your Lea Black Beauty® skincare journey.",
+        "button2_text": "Shop Now",
+        "button2_link": ""
+      }
     },
     "textWithImage": {
-      "type": "text-with-image"
-    },
-    "leftImageRightText": {
-      "type": "left-image-right-text"
-    },
-    "multiColumnSection": {
-      "type": "multi-column-section"
+      "type": "text-with-image",
+      "settings": {
+        "heading_text": "Lea Black Beauty®’s Natural Skincare Products",
+        "short_description": "Elevate your skincare routine with results-driven formulas you can trust.",
+        "button_text": "Shop Now",
+        "button_link": ""
+      }
     },
     "about-lea-black": {
-      "type": "hero-about-lea-black"
+      "type": "hero-about-lea-black",
+      "settings": {
+        "heading_text": "Welcome to the World of Lea Black!",
+        "short_description": "<p>Lea Black’s business focus for more than twenty years has at its core the health, beauty, fitness, and wellness of women everywhere. She has an unparalleled track record of success in developing and marketing natural skincare products made with ethically sourced ingredients before she married and started a family in the ‘90s. Her previous beauty company had offices worldwide with global distribution of over 400 products — including the highly successful “<a href=\"https://www.leablack.com/collections/sudden-youth-collection/products/sudden-youth-lift-complete-facial-treatment\" title=\"https://www.leablack.com/collections/sudden-youth-collection/products/sudden-youth-lift-complete-facial-treatment\">Sudden Youth® Lift Complete Facial Treatment,</a>” which still maintains a strong and loyal consumer demand, and the fragrance “Jazz,” which was sold to YSL.</p><p>Lea Black Beauty® broke boundaries again by developing and launching the hugely popular Lea Black Beauty® <a href=\"/policies/privacy-policy\" target=\"_blank\" title=\"Privacy Policy\">CBD Collection</a> in 2019, introducing all the benefits of hemp to her already industry-leading luxury skincare and beauty products.</p><p>Experience the results for yourself with premium, natural skincare products from Lea Black Beauty®.</p>",
+        "button_text": "SHOP BEAUTY COLLECTION",
+        "button_link": ""
+      }
     },
-    "grid-section": {
-      "type": "grid-section"
+    "multiColumnSection": {
+      "type": "multi-column-section",
+      "blocks": {
+        "card_GmAUCg": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Dry_Skin.webp",
+            "title": "Dry Skin",
+            "description": "Nourish and replenish your skin with ultra-hydrating natural skincare products that restore moisture and leave your complexion feeling soft and smooth.",
+            "link": ""
+          }
+        },
+        "card_qQjwCx": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/aging_skin.webp",
+            "title": "Aging Skin",
+            "description": "Combat fine lines and wrinkles with clinically supported solutions that lift, firm, and promote youthful, radiant skin.",
+            "link": ""
+          }
+        },
+        "card_JjfhUR": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/sensitive_skin.webp",
+            "title": "Sensitive Skin",
+            "description": "Soothe and protect your delicate skin with gentle, natural products free from harsh chemicals and synthetic fragrances.",
+            "link": ""
+          }
+        },
+        "card_jG4pVQ": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/oily.webp",
+            "title": "Oily/Combination Skin",
+            "description": "Balance oil production and refine your complexion with lightweight, non-greasy products that leave your skin feeling fresh and clean.",
+            "link": ""
+          }
+        },
+        "card_DWR9aB": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/redness.webp",
+            "title": "Redness/Inflammation",
+            "description": "Calm and reduce redness with soothing luxury skincare products enriched with anti-inflammatory ingredients, including our CBD-infused options.",
+            "link": ""
+          }
+        },
+        "card_YgJm8K": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/dullness.webp",
+            "title": "Dullness/Lack of Glow",
+            "description": "Revitalize your complexion with brightening products that boost radiance and reveal a healthy, luminous glow.",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_GmAUCg",
+        "card_qQjwCx",
+        "card_JjfhUR",
+        "card_jG4pVQ",
+        "card_DWR9aB",
+        "card_YgJm8K"
+      ],
+      "settings": {
+        "section_title": "Shop By Skin Concern",
+        "section_description": "Your skin deserves a routine tailored to its unique needs. Explore our curated collections at Lea Black Beauty® to find solutions designed to target your specific concerns."
+      }
+    },
+    "ah-testimonials": {
+      "type": "ah-testimonials",
+      "blocks": {
+        "slide_8GqTx7": {
+          "type": "slide",
+          "settings": {
+            "topic": "Lea Black Beauty® Soothing After Sun & Shave Gel with 100mg CBD",
+            "client_says": "Lea Black Beauty is on 🔥 I tried this (Lea Black Beauty® Soothing After Sun & Shave Gel with 100mg CBD) on a whim, and what a pleasant surprise. It soothes aftershave burns. Then my nose got hit hard with a sunburn, so I tried it…totally awesome! Soothing and healing. Great ingredients I think the… Read more.",
+            "client_name": "C J",
+            "button_text": "WRITE YOUR STORY",
+            "button_link": ""
+          }
+        },
+        "slide_JtHbxR": {
+          "type": "slide",
+          "settings": {
+            "topic": "Best I've Ever Used",
+            "client_says": "I had to email you guys to let you know that I ordered my product on Friday and received it on Tuesday. Wow! Not only are your products the best I’ve ever used, but your customer service is the best as well. We even had a holiday in the mix and it was still here so quickly. Thank you for offering huge discounts, so that...Read more",
+            "client_name": "Linda S.",
+            "button_text": "WRITE YOUR STORY",
+            "button_link": ""
+          }
+        },
+        "slide_rzbPpB": {
+          "type": "slide",
+          "settings": {
+            "topic": "Lea Black Beauty® Soothing After Sun & Shave Gel with 100mg CBD",
+            "client_says": "Lea Black Beauty is on 🔥 I tried this (Lea Black Beauty® Soothing After Sun & Shave Gel with 100mg CBD) on a whim, and what a pleasant surprise. It soothes aftershave burns. Then my nose got hit hard with a sunburn, so I tried it…totally awesome! Soothing and healing. Great ingredients I think the… Read more.",
+            "client_name": "C J",
+            "button_text": "WRITE YOUR STORY",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_8GqTx7",
+        "slide_JtHbxR",
+        "slide_rzbPpB"
+      ],
+      "settings": {
+        "title": "Testimonials"
+      }
     },
     "whyUs": {
-      "type": "why-us"
+      "type": "why-us",
+      "settings": {
+        "section_title": "Why Us?",
+        "section_content": "To create our natural skincare products, we ethically source the finest raw ingredients from around the world so you can be assured of the quality. Our proprietary formulas are easy to use and clinically proven to produce amazing results. Satisfaction guaranteed!",
+        "fcontent": "You'll find exactly what you're looking for in Lea Black Beauty®'s natural skincare products. Premium skincare made from the finest ingredients with proven results. Thousands of customer orders and testimonials prove that Lea Black Beauty® luxury skincare products are the choice of distinguished clients worldwide.",
+        "scontent": "Our customer support is second to none. We have three real people here to provide you with five-star customer service during business hours. Contact for any questions you may have. Please allow 24 business hours for us to reply.",
+        "tcontent": "With 128-bit SSL security with advanced encryption you are guaranteed that your purchases are safe. We never store your banking information on our servers. We never sell your information.",
+        "j": "To create our natural skincare products, we ethically source the finest raw ingredients from around the world so you can be assured of the quality. Our proprietary formulas are easy to use and clinically proven to produce amazing results. Satisfaction guaranteed!"
+      }
+    },
+    "leftImageRightText": {
+      "type": "left-image-right-text",
+      "settings": {
+        "heading_text": "Take Our Skincare Quiz",
+        "short_description": "<p>Discover the key to radiant skin with Lea Black Beauty®’s personalized skincare quiz. In just a few moments, uncover a tailored routine of natural skincare products designed to meet your unique skin needs. Whether you're seeking hydration, anti-aging solutions, or the latest in CBD skincare, we’ll guide you to the perfect products to transform your skin.</p>",
+        "button_text": "take the quiz",
+        "button_link": ""
+      }
+    },
+    "grid-section": {
+      "type": "grid-section",
+      "blocks": {
+        "card_4azfeE": {
+          "type": "card",
+          "settings": {
+            "title": "7 Myths About CBD Oil",
+            "description": "Over the last few years, CBD has become insanely popular and finds its way into all kinds of industries.",
+            "link": ""
+          }
+        },
+        "card_bWfe9M": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/grid2.webp",
+            "title": "What Is CBD Oil Good For?",
+            "description": "One natural product has been getting alot of attention now more than ever: Cannabidiol (CBD) With more beauty and",
+            "link": "shopify://pages/data-sharing-opt-out"
+          }
+        },
+        "card_kzTP3W": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/grid3.webp",
+            "title": "5 Benefits of CBD Oil for Beauty and Skincare",
+            "description": "With any new beauty trend, there are bound to be loyal followers and naysayers. When it comes to products",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_4azfeE",
+        "card_bWfe9M",
+        "card_kzTP3W"
+      ],
+      "settings": {
+        "section_title": "LBB CBD 101",
+        "richtext": "<p>We use groundbreaking CBD technology with the latest clinical data to produce some of the most sought-after hemp, clean skincare products available without a prescription. Discover the incredible power of using topical CBD as part of your overall health and wellness plan.</p>"
+      }
     },
     "ourPromises": {
-      "type": "our-promises"
+      "type": "our-promises",
+      "settings": {
+        "description_1": "<p>Take advantage of <a href=\"/policies/privacy-policy\" target=\"_blank\" title=\"Privacy Policy\">free shipping</a> on all orders over $65 (USA shipping only).</p>",
+        "description_2": "<p>Our customer happiness team is here to help at <a href=\"https://gmail.com\" target=\"_blank\" title=\"https://gmail.com\">hello@leablack.com</a>.</p>",
+        "description_3": "<p>We source the highest quality ingredients and CBD for our natural skincare solutions.</p>",
+        "description_4": "<p>We accept AMEX, MasterCard, and Visa</p>",
+        "text_1": "Complimentary Shipping",
+        "text_2": "Satisfaction Guarantee",
+        "text_3": "Best Products",
+        "text_4": "100% Secure Checkout"
+      }
     }
   },
   "order": [
     "hero",
     "dual",
-    "ah-testimonials",
     "textWithImage",
-    "leftImageRightText",
-    "multiColumnSection",
     "about-lea-black",
-    "grid-section",
+    "multiColumnSection",
+    "ah-testimonials",
     "whyUs",
+    "leftImageRightText",
+    "grid-section",
     "ourPromises"
   ]
 }
