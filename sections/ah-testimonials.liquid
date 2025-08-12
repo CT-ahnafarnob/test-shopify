@@ -7,116 +7,136 @@
 
 
 <style>
-            @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap');
 
-            .{{section.id}} {
-              padding: 20px;
-              background-color: #fff;
-              display: flex;
-              justify-content: center;
-              flex-direction: column;
-              align-items: center;
+.{{section.id}} {
+  padding: 20px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
 
-            }
-            .{{section.id}} .container { }
+.{{section.id}} .container1 h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  text-align: center;
+  color: black;
+  font-size: 42px;
+  padding-top: 20px;
+}
 
-            .{{section.id}} .container1 h2{
-                  font-family: "Poppins", sans-serif;
-                  font-weight: 200;
-                  font-style: normal;
-                  text-align: center;
-                  color: black;
-                  font-size: 42px;
-                  padding-top: 40px;
-            }
+.quote-icon {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
 
-            .{{section.id}}.h3 {}
-            .{{section.id}}.p {}
-            .{{section.id}} .container .topic svg {
+.{{section.id}} .container .topic h2 {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 18px;
+  text-align: center;
+  color: black;
+}
 
-            }
-            .quote-icon{
-          display: flex;
-          justify-content: center;
-          margin: 20px 0px;
+.{{section.id}} .container .clientsays p {
+  font-family: "Work Sans";
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 28.8px;
+  text-align: center;
+  color: black;
+  padding: 12px 150px;
+  margin: auto;
+}
 
-            }
-            .{{section.id}} .container .topic h2 {
-                        font-family: "Poppins";
-                        font-weight: 400;
-                        font-size: 18px;
-                        text-align: center;
-                        color: black;
-                        padding-bottom: 20px;
-            }
-            .{{section.id}} .container .clientsays {}
-            .{{section.id}} .container .clientsays p {
-                font-family: "Work Sans";
-                        font-weight: 300;
-                        font-size: 16px;
-                        line-height: 28.8px;
-                        text-align: center;
-                        color: black;
-                        padding: 12px 150px;
-                        margin:auto;
-            }
-            .{{section.id}} .container .clientname h3{
-              font-weight: 600;
-                        font-size: 16px;
-                        line-height: 28.8px;
-                        text-align: center;
-                        color: black
-            }
-  /* Global button assigned */
+.{{section.id}} .container .clientname h3 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 28.8px;
+  text-align: center;
+  color: black;
+}
 
+.swiper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.swiper-slide {
+  width: auto;
+  height: auto;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
+}
 
+.swiper-button-prev {
+  left: 6%;
+  width: 40px;
+  height: 40px;
+  top: 50%;
+}
+.swiper-button-next {
+  right: 6%;
+  width: 40px;
+  height: 40px;
+  top: 50%;
+}
+.swiper-button-prev svg {
+  transform: scaleX(-1);
+}
 
-      .btn-postion{
-        display: flex;
-        justify-content: center;
-        padding-top: 25px;
-      }
+.btn-postion {
+  display: flex;
+  justify-content: center;
+  padding-top: 25px;
+}
 
-      /* 📱 Mobile responsiveness */
-    @media (max-width: 768px) {
-      .{{section.id}} .container1 h2 {
-        font-size: 28px;
-      }
+@media (max-width: 992px) {
+  .{{section.id}} .container .clientsays p {
+    padding: 12px 5%; /* relative padding */
+    font-size: 15px;
+    box-sizing: border-box;
+  }
+}
 
-      .{{section.id}} .container .clientsays p {
-        font-size: 15px;
-        padding: 12px 40px; /* reduce side padding */
-        line-height: 24px;
-      }
+@media (max-width: 767px) {
+  .{{section.id}} .container .clientsays p {
+    padding: 12px 5%; /* scale with screen */
+    font-size: 14px;
+    box-sizing: border-box;
+    word-wrap: break-word; /* prevent overflow on long words */
+  }
 
-      .{{section.id}} .container .clientname h3 {
-        font-size: 15px;
-      }
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: auto;
+    bottom: 35px; /* keep arrows above pagination */
+    transform: translateY(0);
+    width: 20px;
+    height: 20px;
+  }
 
-      .{{section.id}} .container .button {
-        font-size: 13px;
-        padding: 14px 22px;
-      }
-    }
-    /* Smaller devices */
-    @media (max-width: 480px) {
-      .{{section.id}} .container1 h2 {
-        font-size: 24px;
-      }
+  .swiper-button-prev {
+    left: 20%;
+  }
+  .swiper-button-next {
+    right: 20%;
+  }
 
-      .{{section.id}} .container .clientsays p {
-        font-size: 14px;
-        padding: 10px 20px;
-      }
+  .swiper-pagination {
+    bottom: 10px !important; /* make pagination visible */
+  }
+}
 
-      .{{section.id}} .container .button {
-        width: 50%;
-        font-size: 13px;
-        padding: 12px;
-      }
-    }
 </style>
+
 
 <section class="{{section.id}}">
   <div class="container1">
@@ -183,14 +203,18 @@
       </div>
 
       <!-- If we need navigation buttons -->
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev">
+        {% render 'icon-arrow-left' %}
+      </div>
+      <div class="swiper-button-next">
+        {% render 'icon-arrow-right' %}
+      </div>
     </div>
   </div>
 </section>
 
 <script>
-  const swiper = new Swiper('.Topic', {
+  const swiper = new Swiper('.slider-topic', {
     // Optional parameters
 
     loop: true,

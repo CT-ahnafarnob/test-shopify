@@ -54,7 +54,7 @@
 
 /* Card description */
 .card p {
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Work Sans';
   font-weight: 400;
   font-size: 16px;
   color: #555;
@@ -87,15 +87,23 @@
 }
 
 /* Responsive design */
+/* Responsive design */
 @media (max-width: 992px) {
   .grid-container {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+   .p {
+    font-size: 14px;
+    text-align: center;
+    padding: 0 15px;
   }
 }
 
 @media (max-width: 600px) {
   .grid-container {
     grid-template-columns: 1fr;
+    gap: 20px; /* More breathing room between cards */
   }
 }
 </style>
@@ -137,7 +145,7 @@
       "default": "Shop By Skin Concern"
     },
     {
-      "type": "richtext",
+      "type": "textarea",
       "id": "section_description",
       "label": "Section Description",
       "default": "Your skin deserves a routine tailored to its unique needs. Explore our curated collections at Lea Black Beauty® to find solutions designed to target your specific concerns."
